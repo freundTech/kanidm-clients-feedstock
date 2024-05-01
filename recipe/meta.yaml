@@ -1,13 +1,13 @@
 {% set name = "kanidm-clients" %}
-{% set version = "v1.1.0rc16" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/kanidm/kanidm/archive/refs/tags/{{ version.replace("rc", "-rc.") }}.tar.gz
-  sha256: 26e275bf6cf19dba34a2cc0d382c22e3b3c887f15e9fe64a1c011098173a1de9
+  url: https://github.com/kanidm/kanidm/archive/refs/tags/v{{ version.replace("rc", "-rc.") }}.tar.gz
+  sha256: a6dc0578e61d8445f6fb6bb9a0e17dcd5bfd8412b40d26eceafabe3d92f1ac12
 
 build:
   number: 0
@@ -15,12 +15,12 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
     - pkg-config
     - openssl
     - libudev  # [linux]
-    - sysroot_linux-64 2.17  # [linux64]
   host:
     - libudev  # [linux]
     - openssl
@@ -39,7 +39,7 @@ about:
     If you want to host your own authentication service, then Kanidm is for you!
   license: MIT
   license_family: MOZILLA
-  license_file: 
+  license_file:
     - LICENSE.md
     - THIRDPARTY_LICENSES.yaml
   doc_url: https://kanidm.github.io/kanidm/stable/
