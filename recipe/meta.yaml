@@ -1,5 +1,5 @@
 {% set name = "kanidm-clients" %}
-{% set version = "1.3.2" %}
+{% set version = "1.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/kanidm/kanidm/archive/refs/tags/v{{ version.replace("rc", "-rc.") }}.tar.gz
-  sha256: c9dc439b05b492eb5d67b74e55ad1c605d3742f30f511da838ea4a7fcf5d7300
+  sha256: 8af0194446e5e551c59138e4181991b449517d45e3d65b60922d3558733926b0
 
 build:
   number: 0
