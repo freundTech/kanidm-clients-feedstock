@@ -17,6 +17,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('rust') }}
+    - lld
     - cargo-bundle-licenses
     - pkg-config
     - openssl
